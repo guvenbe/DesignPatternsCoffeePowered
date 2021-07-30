@@ -1,24 +1,23 @@
 package com.company.liskov.end;
 
-public class Square extends Rectangle {
+public class Square implements Shape {
+
+    private int side;
 	
 	public Square(int side) {
-		super(side, side);
-	}
-	
-	@Override
-	public void setWidth(int width) {
-		setSide(width);
+	    this.side = side;
 	}
 
-	@Override
-	public void setHeight(int height) {
-		setSide(height);
-	}
+    public int getSide() {
+        return side;
+    }
 
-	public void setSide(int side) {
-		super.setWidth(side);
-		super.setHeight(side);
-	}
+    public void setSide(int side) {
+        this.side = side;
+    }
 
+    @Override
+    public int computeArea() {
+        return side * side;
+    }
 }

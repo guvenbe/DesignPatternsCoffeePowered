@@ -1,5 +1,8 @@
 package com.company.liskov.end;
 
+
+import org.testng.annotations.Test;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -11,10 +14,10 @@ public class Main {
 		System.out.println(square.computeArea());
 		
 		useRectangle(rectangle);
-		
-		useRectangle(square);
+
 
 	}
+
 
 	private static void useRectangle(Rectangle rectangle) {
 		rectangle.setHeight(20);

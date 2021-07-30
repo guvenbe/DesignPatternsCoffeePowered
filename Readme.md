@@ -9,3 +9,9 @@ Open close principle:
 Liskov Substitution Principle:
     We should be able to substitute base class object with child class object and this should not alter
     characteristics of program
+
+Intrerface Segragation principle:
+    Problem:Interface polution: Large interface, unrelated methods, force clases to implement unused methods
+            Method implementation return null or default dummy values
+    Solution: Keep interfaces small
+              Highly cohesive interfaces
