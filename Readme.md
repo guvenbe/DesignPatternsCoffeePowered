@@ -14,4 +14,8 @@ Intrerface Segragation principle:
     Problem:Interface polution: Large interface, unrelated methods, force clases to implement unused methods
             Method implementation return null or default dummy values
     Solution: Keep interfaces small
-              Highly cohesive interfaces
+              Highly cohesive 
+
+Dependency inversion principle:
+    A. High level modules should not depend on low level modules. Both should depend on abstractions
+    B. Abstraction should not depend upon details Details should depend on abstractions
