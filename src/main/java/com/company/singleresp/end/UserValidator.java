@@ -5,13 +5,13 @@ import java.util.regex.Pattern;
 
 public class UserValidator {
 
-    public boolean validateUser(User user) {
+    public boolean validateUser(UserE user) {
         return isValidUser(user);
     }
 
 
     //Validates the user object
-    private boolean isValidUser(User user) {
+    private boolean isValidUser(UserE user) {
         if(!isPresent(user.getName())) {
             return false;
         }

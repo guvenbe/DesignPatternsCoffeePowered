@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+skin BlueModern
+
+autonumber
+participant Client as client
+participant Director as director
+participant ConcreteBuilder as concreteBuilder
+
+activate client
+activate concreteBuilder
+client -> concreteBuilder: new ConcreteBuilder
+
+activate director
+client -> director: new Director(ConcreteBuilder)
+
+client -> director: createObject()
+director ->concreteBuilder: buildPiece1()
+director ->concreteBuilder: buildPiece2()
+deactivate director
+deactivate director
+client -> concreteBuilder: getCompleteObject
+deactivate client
+deactivate concreteBuilder
+@enduml

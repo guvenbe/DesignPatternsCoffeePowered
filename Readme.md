@@ -19,3 +19,4 @@ Intrerface Segragation principle:
 Dependency inversion principle:
     A. High level modules should not depend on low level modules. Both should depend on abstractions
     B. Abstraction should not depend upon details Details should depend on abstractions
+    Eliminate tight coupling

@@ -6,15 +6,15 @@ import java.util.Map;
 //Stores data in memory
 public class Store {
 
-    private static final Map<String, User> STORAGE = new HashMap<>();
+    private static final Map<String, UserE> STORAGE = new HashMap<>();
     //Adds user to in memory hash map
-    public void store(User user) {
+    public void store(UserE user) {
         synchronized(STORAGE) {
             STORAGE.put(user.getName(), user);
         }
     }
     //Returns used with given id if present in map else null
-    public User getUser(String name) {
+    public UserE getUser(String name) {
         synchronized(STORAGE) {
             return STORAGE.get(name);
         }

@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam handwritten true
+class Director{
++createObject(Builder builder()):Product
+}
+note bottom of Director
+Role - Director
+-Uses Builder to construct object
+-know the step & their sequence to
+ to build product
+end note
+
+interface Builder{
+    +buildPeice1()
+    +buildPeice2()
+    +build()
+    +getCompleteProduct()
+    }
+note right of Builder
+Role - Builder
+-Provides interface for creating
+ parts of product
+end note
+
+class ContrereBuilder{
+    +buildPeice1()
+    +buildPeice2()
+    +build()
+    +getCompleteProduct()
+    }
+note bottom of ContrereBuilder
+Role - Concerete Builder
+- constructs parts & assembles final product
+- keeps tract of product it creates
+end note
+
+class Product{}
+note right of Product
+-Final complex object we want to create
+end note
+
+Director o- Builder
+ContrereBuilder <-u- Builder
+ContrereBuilder -> Product
+
+
+@enduml
+
+
+
+

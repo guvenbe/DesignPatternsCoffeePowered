@@ -13,7 +13,7 @@ public class UserController {
     //Create a new user
     public String createUser(String userJson) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        User user = mapper.readValue(userJson, User.class);
+        UserE user = mapper.readValue(userJson, UserE.class);
 
         UserValidator validator = new UserValidator();
         boolean valid = validator.validateUser(user);

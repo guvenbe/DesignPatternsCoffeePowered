@@ -15,19 +15,19 @@ public class UserController {
     public String createUser(String userJson) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         
-        User user = mapper.readValue(userJson, User.class);
+        UserB user = mapper.readValue(userJson, UserB.class);
 
         if(!isValidUser(user)) {
             return "ERROR";
         }
 
-        store.store(user);
+//        store.store(user);
         
         return "SUCCESS";
     } 
 
     //Validates the user object
-    private boolean isValidUser(User user) {
+    private boolean isValidUser(UserB user) {
         if(!isPresent(user.getName())) {
             return false;
         }

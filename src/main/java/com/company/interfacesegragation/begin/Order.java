@@ -3,7 +3,7 @@ package com.company.interfacesegragation.begin;
 import java.time.LocalDateTime;
 
 //Order entity class
-public class Order extends Entity {
+public class Order extends EntityB {
 
 	private LocalDateTime orderPlacedOn;
 	

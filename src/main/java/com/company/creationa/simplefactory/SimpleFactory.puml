@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam handwritten true
+class client{}
+class SimpleFactory{
+ + {Static} getProduct(String): Product
+}
+note top of SimpleFactory
+Role - SimpleFacrory
+ -provide a static method to get
+  instance of Product subclass
+end note
+class Product{}
+note top of Product
+Role - SimpleFacrory
+ -Objects of this Class & it's
+  subclasses are needed
+end note
+class ProductA{}
+class ProductB{}
+
+client->SimpleFactory
+SimpleFactory -> Product
+Product -D-> ProductA
+Product -D-> ProductB
+
+
+@enduml

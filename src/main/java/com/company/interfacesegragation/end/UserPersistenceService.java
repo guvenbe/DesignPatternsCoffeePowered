@@ -7,33 +7,33 @@ import java.util.stream.Collectors;
 
 
 //Stores User entities
-public class UserPersistenceService implements PersistenceService<User> {
+public class UserPersistenceService implements PersistenceServiceE<UserE> {
 	
-	private static final Map<Long, User> USERS = new HashMap<>();
+	private static final Map<Long, UserE> USERS = new HashMap<>();
 	
 	@Override
-	public void save(User entity) {
+	public void save(UserE entity) {
 		synchronized (USERS) {
 			USERS.put(entity.getId(), entity);
 		}
 	}
 
 	@Override
-	public void delete(User entity) {
+	public void delete(UserE entity) {
 		synchronized (USERS) {
 			USERS.remove(entity.getId());
 		}
 	}
 
 	@Override
-	public User findById(Long id) {
+	public UserE findById(Long id) {
 		synchronized (USERS) {
 			return USERS.get(id);
 		}
 	}
 	
 
-	public List<User> findByName(String name) {
+	public List<UserE> findByName(String name) {
 		synchronized (USERS) {
 			return USERS.values().stream().filter(u->u.getName().equalsIgnoreCase(name)).collect(Collectors.toList());
 		}
