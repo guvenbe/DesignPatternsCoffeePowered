@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Product{}
+note top of Product
+Role - Product
+-base class or interface product
+ created by factory method
+end note
+class ConcreteProductA{}
+class ConcreteProductA{}
+class Creator
+note top of Creator
+Role Creator
+-Declares the abstract factory method
+-Additionally uses the factory method
+ to create product
+
+end note
+class ConcreteCreatorA
+class ConcreteCreatorB
+
+ConcreteProductA -u-> Product
+ConcreteProductB -u-> Product
+ConcreteCreatorA -u-> Creator
+ConcreteCreatorB -u-> Creator
+ConcreteCreatorA -> ConcreteProductA
+ConcreteCreatorB -> ConcreteProductB
+@enduml

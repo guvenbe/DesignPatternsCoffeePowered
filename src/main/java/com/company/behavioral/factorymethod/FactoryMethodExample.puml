@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/class-diagram
+skinparam handwritten true
+
+class TextMessage{}
+class JSONMessage{}
+abstract class Message{}
+abstract class MessageCreator{}
+class TextMessageCreator{}
+class JSONMessageCreator{}
+
+TextMessage -u-> Message
+JSONMessage -u-> Message
+TextMessageCreator -u-> MessageCreator
+JSONMessageCreator -u-> MessageCreator
+TextMessageCreator -> TextMessage
+JSONMessageCreator -> JSONMessage
+@enduml

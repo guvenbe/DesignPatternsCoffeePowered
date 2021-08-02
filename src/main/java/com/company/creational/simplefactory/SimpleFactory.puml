@@ -6,13 +6,13 @@ class SimpleFactory{
  + {Static} getProduct(String): Product
 }
 note top of SimpleFactory
-Role - SimpleFacrory
+Role - SimpleFactrory
  -provide a static method to get
   instance of Product subclass
 end note
 class Product{}
 note top of Product
-Role - SimpleFacrory
+Role - Product
  -Objects of this Class & it's
   subclasses are needed
 end note
